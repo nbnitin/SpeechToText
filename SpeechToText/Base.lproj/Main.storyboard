@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SpeechToText" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Speak to show your words" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q3T-EL-eEB">
+                                <rect key="frame" x="30" y="52" width="354" height="76.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="fmf-5B-nku">
+                                <rect key="frame" x="30" y="231.5" width="354" height="630.5"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="P7c-V7-87I">
+                                <rect key="frame" x="30" y="189" width="296" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="6ys-0f-7lj"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NLV-zQ-d4l">
+                                <rect key="frame" x="334" y="181" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="RQl-Vy-tXm"/>
+                                    <constraint firstAttribute="height" constant="50" id="Yeg-rS-ASW"/>
+                                </constraints>
+                                <state key="normal" image="record"/>
+                                <connections>
+                                    <action selector="btnRecordAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="D6W-d8-NqA"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ep1-1P-J8E" customClass="SCSiriWaveFormViewSwift" customModule="SpeechToText" customModuleProvider="target">
+                                <rect key="frame" x="30" y="131" width="354" height="50"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="uEy-E5-q2a"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="fmf-5B-nku" firstAttribute="top" secondItem="P7c-V7-87I" secondAttribute="bottom" constant="8.5" id="1pZ-we-MTk"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fmf-5B-nku" secondAttribute="trailing" constant="30" id="6O2-GS-xsR"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="NLV-zQ-d4l" secondAttribute="trailing" constant="30" id="Aww-Ou-U8V"/>
+                            <constraint firstItem="P7c-V7-87I" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="CCK-qt-haW"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ep1-1P-J8E" secondAttribute="trailing" constant="30" id="FnU-KC-qxE"/>
+                            <constraint firstItem="fmf-5B-nku" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="NL7-Eg-1My"/>
+                            <constraint firstItem="NLV-zQ-d4l" firstAttribute="leading" secondItem="P7c-V7-87I" secondAttribute="trailing" constant="8" id="WrF-ai-t5u"/>
+                            <constraint firstItem="Q3T-EL-eEB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="X7V-KM-5IF"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Q3T-EL-eEB" secondAttribute="trailing" constant="30" id="YTW-rF-HOP"/>
+                            <constraint firstItem="ep1-1P-J8E" firstAttribute="top" secondItem="Q3T-EL-eEB" secondAttribute="bottom" constant="2.5" id="ZP6-Wg-K4h"/>
+                            <constraint firstItem="ep1-1P-J8E" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="hgZ-je-k0a"/>
+                            <constraint firstItem="P7c-V7-87I" firstAttribute="top" secondItem="ep1-1P-J8E" secondAttribute="bottom" constant="8" id="qpD-vd-GnM"/>
+                            <constraint firstItem="NLV-zQ-d4l" firstAttribute="centerY" secondItem="P7c-V7-87I" secondAttribute="centerY" id="uan-H7-5V7"/>
+                            <constraint firstItem="Q3T-EL-eEB" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="xIt-Uj-YMd"/>
+                            <constraint firstItem="fmf-5B-nku" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="xNN-ws-9Rp"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="btnRecord" destination="NLV-zQ-d4l" id="87t-gj-SJg"/>
+                        <outlet property="lblTitle" destination="Q3T-EL-eEB" id="rXj-a6-Y6h"/>
+                        <outlet property="txtChooseLanguage" destination="P7c-V7-87I" id="QML-FJ-RXn"/>
+                        <outlet property="txtSpeechToText" destination="fmf-5B-nku" id="Mt9-eF-LPe"/>
+                        <outlet property="waveFormView" destination="ep1-1P-J8E" id="xH6-eX-TrU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="97.767857142857139"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="record" width="360" height="360"/>
+    </resources>
+</document>
